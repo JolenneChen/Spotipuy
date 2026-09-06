@@ -1,9 +1,13 @@
 export const playlists = [
   {
     id: "1",
-    title: "Daily Mix 1",
+    name: "Daily Mix 1",
+    title: "Starboy",
+    artist: "The Weeknd",
     desc: "playlist - user",
     image: "/Images/StarBoyboy.jpg",
+    album: "Starboy",
+    duration: "2:10",
     songs: [
         {
             id: "song-1",
@@ -11,10 +15,5 @@ export const playlists = [
             artist: "Artist 1"
         }
     ]
-  },
-  {
-    id: "2",
-    title: "Daily Mix 2",
-    image: "/song2.jpg",
   },
 ]

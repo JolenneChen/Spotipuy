@@ -1,24 +1,36 @@
 import { NextRequest, NextResponse } from "next/server";
-
+interface DeezerItem{
+  id: number;
+  title: string;
+  artist?:{
+    name: string;
+  };
+  album?:{
+    title: string;
+    cover_medium: string;
+  };
+  preview?: string;
+  duration?: number;
+}
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const query = searchParams.get("q") ;
   try {
-    const response = await fetch(`https://api.deezer.com/search?q=encodeURI(${query})&limit=20`);
+    const response = await fetch(`https://api.deezer.com/search?q=${encodeURIComponent(query)}&limit=20`);
     const data = await response.json();
-    const track = data.data[0]; 
+    const tracks =(data.data || []).map((item: DeezerItem) => ({
+      id: item.id,
+      title: item.title,
+      name: item.artist?.name || "",
+      image: item.album?.cover_medium || "",
+      preview: item.preview || "",
+      duration: item.duration || 0,
+      album: item.album?.title || "",
+    }));
     return NextResponse.json({
          success:true, 
          source: "deezer",
-         track:{
-            id: track.id,
-            title : track.title,
-            name: track.artist.name,
-            image: track.album.cover_medium,
-            preview: track.preview,
-            duration: track.duration,
-            album: track.album.title,
-         } ,
+         track:tracks,
   })
     ;
     
