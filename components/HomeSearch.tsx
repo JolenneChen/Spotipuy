@@ -1,6 +1,5 @@
 "use client"
 import { MagnifyingGlassIcon } from "@phosphor-icons/react"
-import { Button } from "./ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
