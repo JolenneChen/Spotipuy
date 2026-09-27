@@ -10,16 +10,16 @@ const ListCard = [
 
 function PlaylistCard({ song }) {
   return (
-    <div className="text-white cursor-pointer hover:bg-[#25282c] text-[19px] font-serif rounded-xl">
+    <div className="text-white max-w-50 cursor-pointer hover:bg-[#232527] text-[19px] font-serif rounded-xl ">
       <Image
         src={song.image}
         alt={song.title}
-        width={220}
+        width={200}
         height={280}
-        className="p-4 rounded-2xl"
+        className="p-4 rounded-4xl"
       />
 
-      <div className="px-2 pb-2">
+      <div className="pl-2 pb-2">
         <p>{song.title}</p>
         <p className="text-gray-400 text-sm">
           {song.artist}
@@ -31,7 +31,7 @@ function PlaylistCard({ song }) {
 
 export default function Recplaylist() {
   return (
-    <div className="w-full h-full ">
+    <div className="w-full h-full pt-10">
 
       <p className="text-3xl font-bold text-white">Made For You</p>
       <div className="grid grid-flow-col auto-cols-55 gap-4 mt-8 ">

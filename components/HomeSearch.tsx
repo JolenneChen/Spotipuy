@@ -1,5 +1,6 @@
 "use client"
 import { MagnifyingGlassIcon } from "@phosphor-icons/react"
+import { Button } from "./ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
@@ -77,7 +78,7 @@ const SearchCard = () => {
 
     return (
 
-        <div className="w-full  space-y-5">
+        <div className="w-full min-h-screen bg-black space-y-5">
             <form onSubmit={handleSearch}>
                 <div className="relative flex items-center w-1/2 h-12 bg-[#2b2a2a] rounded-lg p-4">
                     <MagnifyingGlassIcon size={28} className="text-white cursor-pointer "  ></MagnifyingGlassIcon>
@@ -109,27 +110,27 @@ const SearchCard = () => {
 
                 </Link>
             ))}
-            <h1 className='font-bold text-3xl '>Recent Searches</h1>
+            <h1 className='font-bold text-3xl text-white'>Recent Searches</h1>
             <div className="flex gap-15">
                 <div className="left-0 gap-4 mt-4 text-center">
                     <Image src="/Images/StarBoyBoy.jpg" alt="Recent Search" width={100} height={100} className="rounded-full" />
-                    <p>The Weeknd</p>
+                    <p className="text-white">The Weeknd</p>
                     <p className="text-gray-400">Artist</p>
                 </div>
                 <div className="left-0 gap-4 mt-4 text-center">
                     <Image src="/Images/StarBoyBoy.jpg" alt="Recent Search" width={100} height={100} className="rounded-full" />
-                    <p>The Weeknd</p>
+                    <p className="text-white">The Weeknd</p>
                     <p className="text-gray-400">Artist</p>
                 </div>
                 <div className="left-0 gap-4 mt-4 text-center">
                     <Image src="/Images/StarBoyBoy.jpg" alt="Recent Search" width={100} height={100} className="rounded-full" />
-                    <p>The Weeknd</p>
+                    <p className="text-white">The Weeknd</p>
                     <p className="text-gray-400">Artist</p>
                 </div>
             </div>
             <div className="">
                 <p className="text-white text-3xl font-bold">Browse All</p>
-                <div className="grid grid-cols-5rows-2 grid-flow-col auto-cols-55 gap-4 mt-8 ">
+                <div className="grid grid-flow-col auto-cols-55 gap-4 mt-8 ">
                     {ListCard.map((card) => (
                         <HomeSearchCard key={card.id} params={card} />
                     ))}

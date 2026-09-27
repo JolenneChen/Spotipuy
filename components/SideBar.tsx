@@ -18,8 +18,8 @@ const SideBar = () => {
 
                     <Link href="/" className="text-white hover:bg-[#25282c] p-2 pl-10 rounded-xl text-[21px] font-serif flex"> <HouseIcon className=" mr-2" size={28} /> Home</Link>
 
-                    <a href="#" className="text-white  hover:bg-[#25282c] p-2 pl-10 rounded-xl text-[21px] font-serif flex"> <HeartIcon className=" mr-2 bg-linear-to-tl rounded-xs to-[#8d54d8] from-[#d781e4] " size={28} /> Liked Songs</a>
-                    
+                    <Link href="/Liked" className="text-white  hover:bg-[#25282c] p-2 pl-10 rounded-xl text-[21px] font-serif flex"> <HeartIcon className=" mr-2 bg-linear-to-tl rounded-xs to-[#8d54d8] from-[#d781e4] " size={28} /> Liked Songs</Link>
+
                     <Link href="/Search" className=" text-white  hover:bg-[#25282c] p-2 pl-10 rounded-xl text-[21px] font-serif flex">
                         <MagnifyingGlassIcon size={28} className="text-white" /> Search</Link>
 
